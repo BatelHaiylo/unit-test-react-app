@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
-function App() {
+export default function App() {
+  const [textInput,setTextInput] = useState("")
+  const [textvalue,setTextValue] = useState("")
+
+  const activeInput = (e) => {setTextInput(e.target.value)}
+  const popAlert = () => {setTextValue(textInput)}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <code>src/home</code>
+      <h1 data-testid="app-comp-home-h1" className='app-h1'>Home</h1>
+      <label htmlFor='textInput'>enter your name</label>
+      <input type="text" name="textInput" data-testid="app-comp-input" onChange={(e) => {activeInput(e)}} ></input>
+      <button data-testid="app-comp-home-click-btn" className='app-first-btn' onClick={popAlert}>CLICK</button>
+      <h1 data-testid="app-comp-home-afterclick-header">{textvalue}</h1>
     </div>
   );
 }
-
-export default App;

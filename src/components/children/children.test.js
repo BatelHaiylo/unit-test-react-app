@@ -33,7 +33,7 @@ describe("test Children component", ()=>{
     test("check by class name",()=>{
         render(<Children/>)
         const testElement = screen.getByText("Hello children")
-        expect(testElement.length).toEqual(14)
+        expect(testElement.length).toBe(14)
     })
     // test("check lang", ()=>{
     //     render(<Children/>)
